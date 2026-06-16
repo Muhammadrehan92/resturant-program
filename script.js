@@ -10,7 +10,7 @@ let seekhKabaab = 350
 let golaKabaab = 450 
 
 
-if(item === "Biryani"){
+if(item === "Biryani" || "biryani"){
    Btype = prompt("3 types of Biryani 1.aloo 2.chicken 3.beef")
    if(Btype === "aloo"){
        quantity = +prompt("kitney")
@@ -25,7 +25,7 @@ if(item === "Biryani"){
         output.innerHTML = `your order is ${quantity} ${item}, and your bill is ${beefBiryani * quantity}`    
     }
 }
-else if (item === "Tikka") {
+else if (item === "Tikka" || "tikka"){
 
      Ttype = prompt("2 types: chicken, chest");
 
@@ -34,7 +34,7 @@ else if (item === "Tikka") {
         output.innerHTML = `order ${quantity} ${item}, and your bill is ${chickenTikka * quantity}`;
     }
 
-    else if (Ttype === "chest") {
+    else if (Ttype === "chest" || "Chest") {
         quantity = +prompt("kitney");
         output.innerHTML = `your order is ${quantity} ${item}, and your bill is ${chestTikka * quantity}`;
     }
