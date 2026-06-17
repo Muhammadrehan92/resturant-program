@@ -1,6 +1,5 @@
-let item = prompt ("Biryani ,Tikka ,Kabaab")
+/*let item = prompt ("Biryani ,Tikka ,Kabaab")
 let output = document.getElementById('output')
-
 let chkBiryani = 220
 let alooBiryani = 120
 let beefBiryani = 200
@@ -53,5 +52,86 @@ else if (item === "Kabaab") {
          quantity = +prompt("kitney");
          output.innerHTML = `order ${quantity} ${item}, bill ${golaKabaab * quantity}`;
     }
-}
+}*/
+let type;
+let price;
+function order(item) {
 
+    
+
+        if (item === "biryani") {
+
+            type = prompt(
+    "Select Biryani:\n1. aloo\n2. chicken\n3. beef"
+).toLowerCase();
+        if (type === "aloo") {
+            price = 150;
+        }
+        else if (type === "chicken") {
+            price = 250;
+        }
+        else if (type === "beef") {
+            price = 350;
+        }
+        else {
+            alert("Invalid Biryani Type");
+            return;
+        }
+
+    }
+
+    else if (item === "tikka") {
+
+             type = prompt(
+            "Select Tikka:\n1. chicken\n2. chest"
+        ).toLowerCase();
+
+        if (type === "chicken") {
+            price = 400;
+        }
+        else if (type === "chest") {
+            price = 500;
+        }
+        else {
+            alert("Invalid Tikka Type");
+            return;
+        }
+
+    }
+
+    else if (item === "kabaab") {
+
+             type = prompt(
+            "Select Kabaab:\n1. gola\n2. seekh"
+        ).toLowerCase();
+
+        if (type === "gola") {
+            price = 350;
+        }
+        else if (type === "seekh") {
+            price = 300;
+        }
+        else {
+            alert("Invalid Kabaab Type");
+            return;
+        }
+
+    }
+
+    let quantity = +prompt("Enter Quantity");
+
+    if (quantity <= 0 || isNaN(quantity)) {
+        alert("Enter Valid Quantity");
+        return;
+    }
+
+    let total = price * quantity;
+
+    document.getElementById("output").innerHTML = `
+        <h2>✅ Order Confirmed</h2>
+        <p>Item: ${item}</p>
+        <p>Category: ${type}</p>
+        <p>Quantity: ${quantity}</p>
+        <p>Total Bill: Rs ${total}</p>
+    `;
+}
